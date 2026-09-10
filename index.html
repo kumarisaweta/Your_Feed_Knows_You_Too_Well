@@ -1,0 +1,386 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Feed Knows You Too Well</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,700&family=Archivo+Black&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <svg style="display:none;" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="icon-memes" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></symbol>
+    <symbol id="icon-music" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
+    <symbol id="icon-gaming" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h4M8 10v4M15 13h.01M18 11h.01"/></symbol>
+    <symbol id="icon-tech" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></symbol>
+    <symbol id="icon-fitness" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 4h3v16h-3M3 4h3v16H3M6 12h12"/></symbol>
+    <symbol id="icon-sports" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 2v20M2 12h20"/></symbol>
+    <symbol id="icon-movies" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M2 7h20M2 17h20M7 2v20M17 2v20"/></symbol>
+    <symbol id="icon-study" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></symbol>
+    <symbol id="icon-news" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Z"/><path d="M18 14h-8M15 18h-5"/></symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+    <symbol id="icon-skull" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="12" r="1.5"/><circle cx="15" cy="12" r="1.5"/><path d="M16 20a4 4 0 0 0 4-4V9a8 8 0 1 0-16 0v7a4 4 0 0 0 4 4"/></symbol>
+    <symbol id="icon-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></symbol>
+    <symbol id="icon-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></symbol>
+    <symbol id="icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+    <symbol id="icon-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
+    <symbol id="icon-cross" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+    <symbol id="icon-save" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></symbol>
+    <symbol id="icon-sleep" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></symbol>
+    <symbol id="icon-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></symbol>
+    <symbol id="icon-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+    <symbol id="icon-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></symbol>
+  </svg>
+
+  <!-- 3D BOX INTRO -->
+  <div id="box-intro" class="box-intro-overlay" onclick="this.classList.add('zoomed-in'); setTimeout(() => this.style.display='none', 1200);">
+    <div class="box-container" id="the-box">
+      <div class="box-inner">
+        <div class="box-content">
+          <svg class="warning-icon"><use href="#icon-alert"></use></svg>
+          <div class="box-title">CLASSIFIED ARCHIVE</div>
+          <div class="box-subtitle">> BEHAVIOURAL DOSSIER #001</div>
+        </div>
+      </div>
+      <div class="box-flap flap-top"></div>
+      <div class="box-flap flap-bottom"></div>
+      <div class="tape-strip" id="tape-strip">CLASSIFIED // DO NOT CROSS</div>
+      <button id="btn-tear-tape" class="btn-tear">✂ TEAR TAPE TO UNLOCK</button>
+    </div>
+  </div>
+
+  <div class="noise-overlay"></div>
+  <div class="grid-bg"></div>
+
+  <div class="top-marquee">
+    <div class="marquee-content">
+      <span>// EXPERIMENT #001 // BEHAVIOURAL DATA DETECTED // ALGORITHM IS WATCHING // DO NOT BLINK //</span>
+      <span>// EXPERIMENT #001 // BEHAVIOURAL DATA DETECTED // ALGORITHM IS WATCHING // DO NOT BLINK //</span>
+    </div>
+  </div>
+
+  <div class="app-container">
+    <header class="app-header" id="app-header">
+      <div class="header-left">
+        <img src="assets/images/nexasoul-logo.png" alt="NexaSoul" class="header-logo surprise-me" id="main-logo">
+      </div>
+      <div class="header-right">
+        <div class="brand-badge surprise-me">
+          <span class="pulse-dot"></span>
+          <span class="brand-tag">SYS.CONSTRAINTS v2.0</span>
+        </div>
+        <div id="simulation-progress" class="simulation-progress" hidden>
+          <div class="progress-info">
+            <span id="progress-text" class="progress-text">LEVEL 01</span>
+            <span id="progress-percent" class="progress-percent">25%</span>
+          </div>
+          <div class="progress-bar-wrapper">
+            <div id="progress-bar" class="progress-bar"></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="main-split-layout">
+      <div class="left-content-area">
+        <main id="app">
+          <!-- 1. LANDING -->
+          <section id="landing-screen" class="app-screen landing-section active">
+            <div class="hero-meta">
+              <span class="stamp-retro float-tilt surprise-me" data-slang="PLAYER ONE READY"> > PLAYER_01</span>
+              <span class="stamp-retro stamp-red rotate-back surprise-me" data-slang="SIGNAL LOCKED"> > ONLINE</span>
+            </div>
+            <h2 id="landing-heading" class="hero-heading">
+              <span class="text-line"><span class="text-word">YOUR</span></span>
+              <span class="text-line"><span class="text-word">FEED</span></span>
+              <span class="text-line overlap-line"><span class="text-word text-red glitch" data-text="KNOWS">KNOWS</span></span>
+              <span class="text-line"><span class="text-word">YOU</span></span>
+              <span class="text-line small-line highlight-tape"><span class="text-word">TOO WELL.</span></span>
+            </h2>
+            <div class="hand-drawn-arrow">
+              <svg viewBox="0 0 100 100" fill="none" stroke="var(--ink-black)" stroke-width="4"><path d="M10 10 Q 50 20 80 80 M 60 80 L 80 80 L 80 60" /></svg>
+            </div>
+          </section>
+
+          <!-- 2. CONTENT (Filter Bubble Constraint) -->
+          <section id="content-screen" class="app-screen questionnaire-section" hidden>
+            <div class="section-card cardboard paper-tear-edge">
+              <div class="tape tape-top-left"></div>
+              <div class="section-header">
+                <div class="stamp-retro angle-stamp rotate-wild">CONSTRAINT 01</div>
+                <h2 class="section-title text-bleed">FILTER BUBBLE<br>CONSTRAINT<span class="title-dot">.</span></h2>
+                <p class="section-sub">> What invisible boundaries trap your worldview?</p>
+                <div class="counter-badge" id="preferences-counter">MIN 3 REQ <span class="counter-num">[<span id="preferences-selected-count">0</span>]</span></div>
+              </div>
+              <div id="content-preferences-container" class="cards-container">
+                <div id="content-preference-cards" class="content-cards-grid"></div>
+              </div>
+              <div class="section-actions">
+                <button id="btn-preferences-back" class="btn btn-secondary">&larr; BACK</button>
+                <button id="btn-preferences-next" class="btn btn-primary" disabled>PROCEED &rarr;</button>
+              </div>
+            </div>
+          </section>
+
+          <!-- 3. SCROLLING (Temporal Constraint) -->
+          <section id="scrolling-screen" class="app-screen questionnaire-section" hidden>
+            <div class="section-card cardboard paper-tear-edge">
+              <div class="tape tape-top-right"></div>
+              <div class="section-header">
+                <div class="stamp-retro angle-stamp stamp-red">CONSTRAINT 02</div>
+                <h2 class="section-title text-bleed">TEMPORAL<br>CONSTRAINT<span class="title-dot">.</span></h2>
+                <p class="section-sub">> How does the algorithm break your real-life time limits?</p>
+              </div>
+              <div class="form-block"><div id="scroll-time-cards" class="time-cards-grid"></div></div>
+              <div class="form-block slider-block physical-box">
+                <div class="slider-header">
+                  <label class="form-block-label">DOOMSCROLL DIAL:</label>
+                  <span class="slider-value-pill" id="slider-pill-display">60 MINS</span>
+                </div>
+                <input type="range" id="input-scroll-minutes" min="5" max="120" value="60" step="1" class="modern-slider chunky-slider">
+                <div class="slider-feedback-card paper-scrap" id="slider-feedback-display"></div>
+              </div>
+              <div class="section-actions">
+                <button id="btn-scrolling-back" class="btn btn-secondary">&larr; BACK</button>
+                <button id="btn-scrolling-next" class="btn btn-primary" disabled>PROCEED &rarr;</button>
+              </div>
+            </div>
+          </section>
+
+          <!-- 4. ENGAGEMENT (Friction Constraint) -->
+          <section id="engagement-screen" class="app-screen questionnaire-section" hidden>
+            <div class="section-card cardboard paper-tear-edge">
+              <div class="tape tape-top-left"></div>
+              <div class="section-header">
+                <div class="stamp-retro angle-stamp">CONSTRAINT 03</div>
+                <h2 class="section-title text-bleed">FRICTION<br>CONSTRAINT<span class="title-dot">.</span></h2>
+                <p class="section-sub">> What overrides your laziness and forces a digital action?</p>
+                <div class="counter-badge" id="engagement-hint">SELECT 1+ <span class="counter-num">[<span id="engagement-selected-count">0</span>]</span></div>
+              </div>
+              <div id="engagement-cards-container" class="cards-container">
+                <div id="engagement-cards" class="engagement-cards-grid"></div>
+              </div>
+              <div class="section-actions">
+                <button id="btn-engagement-back" class="btn btn-secondary">&larr; BACK</button>
+                <button id="btn-engagement-next" class="btn btn-primary" disabled>PROCEED &rarr;</button>
+              </div>
+            </div>
+          </section>
+
+          <!-- 5. SCENARIOS (Free-Will Constraint) -->
+          <section id="scenarios-screen" class="app-screen questionnaire-section" hidden>
+            <div class="section-card cardboard paper-tear-edge">
+              <div class="tape tape-top-right"></div>
+              <div class="section-header">
+                <div class="stamp-retro angle-stamp stamp-red">FINAL TEST</div>
+                <h2 class="section-title text-bleed">FREE-WILL<br>CONSTRAINT<span class="title-dot">.</span></h2>
+                <div class="scenario-status-row"><span class="scenario-step-indicator" id="scenario-counter">1 / 3</span></div>
+              </div>
+              <div class="scenario-content-box physical-inset" id="active-scenario-card">
+                <h3 class="scenario-question-title" id="scenario-question"></h3>
+                <div id="scenario-options-container"><div id="scenario-options" class="scenario-options-grid"></div></div>
+              </div>
+              <div class="section-actions">
+                <button id="btn-scenario-back" class="btn btn-secondary">&larr; BACK</button>
+                <button id="btn-scenario-next" class="btn btn-primary" disabled>PROCEED &rarr;</button>
+              </div>
+            </div>
+          </section>
+
+          <!-- 6. ANALYSIS -->
+          <section id="analysis-screen" class="app-screen analysis-section" hidden>
+            <div class="analysis-device">
+              <div class="analysis-card" id="analysis-card">
+                <div class="crt-overlay"></div>
+                <div class="scan-line"></div>
+                <h2 class="analysis-title">>>> TERMINAL</h2>
+                <p id="analysis-status" class="analysis-status-text">INITIALIZING...</p>
+                <div class="analysis-progress-wrapper">
+                  <div class="analysis-progress-track"><div id="analysis-progress-fill" class="analysis-progress-fill"></div></div>
+                  <span id="analysis-percentage-text" class="analysis-percentage-text">0%</span>
+                </div>
+                <div id="analysis-log" class="analysis-log"></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 7. RESULT -->
+          <section id="result-screen" class="app-screen result-dashboard-section" hidden>
+            <div class="result-hero" id="results-hero">
+              <div class="stamp-retro huge-stamp rotate-wild">★ CLASSIFIED PROFILE ★</div>
+              <div class="archetype-reveal-card cardboard paper-tear-edge">
+                <div class="archetype-emoji-box hover-spin" id="archetype-emoji"></div>
+                <div class="class-label">CLASS DESIGNATION:</div>
+                <h3 id="archetype-title" class="archetype-name text-bleed"></h3>
+                <p id="archetype-description" class="archetype-summary"></p>
+              </div>
+            </div>
+            <div class="result-grid">
+              <!-- Meta Knowledge Card -->
+              <div class="result-card brutal-card cardboard hover-lift" id="card-meta-knowledge" style="display:none; grid-column: span 2; border-color: var(--retro-blue);">
+                <div class="stamp-retro angle-stamp" style="background: var(--retro-blue); color: #fff;">META DATA</div>
+                <h4 class="result-card-title text-retro-blue">SYS.KNOWLEDGE LIMIT</h4>
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                  <div>
+                    <div style="font-size: 0.85rem; font-weight: bold; margin-bottom:0.3rem;">FEED PREDICTABILITY:</div>
+                    <div class="stat-number" id="predict-score" style="color:var(--retro-blue);">94%</div>
+                  </div>
+                  <div>
+                    <div style="font-size: 0.85rem; font-weight: bold; margin-bottom:0.3rem;">DISCOVERY BUDGET:</div>
+                    <div class="stat-number" id="chaos-score" style="color:var(--muted-green);">0%</div>
+                  </div>
+                </div>
+                <p style="font-size:0.8rem; margin-top:1rem; opacity:0.8;" id="knowledge-msg">> Your feed is a closed loop.</p>
+              </div>
+
+              <div class="result-card brutal-card cardboard" id="card-traits">
+                <h4 class="result-card-title">SYS.TRAITS</h4>
+                <div id="traits" class="traits-tags-grid"></div>
+              </div>
+              <div class="result-card brutal-card cardboard" id="card-compatibility">
+                <h4 class="result-card-title">ALGO-COMPATIBILITY</h4>
+                <div class="compatibility-display" id="compatibility-score"></div>
+              </div>
+              <div class="result-card brutal-card cardboard" id="card-content-dna">
+                <h4 class="result-card-title">CONTENT DNA</h4>
+                <div id="content-dna" class="content-dna-bars"></div>
+              </div>
+              <div class="result-card brutal-card cardboard" id="card-scroll-stats">
+                <h4 class="result-card-title">DAMAGE REPORT</h4>
+                <div class="stats-overview" id="scrolling-stats"></div>
+              </div>
+              <div class="result-card brutal-card roast-card" id="card-roast">
+                <div class="stamp-retro roast-stamp stamp-red">WARNING</div>
+                <h4 class="result-card-title text-mustard">◄ ROAST MODULE ►</h4>
+                <blockquote id="roast" class="roast-quote"></blockquote>
+              </div>
+              <div class="result-card brutal-card cardboard feed-card" id="card-recommendations">
+                <h4 class="result-card-title">CURATED SIMULATION</h4>
+                <div id="recommendation-cards" class="feed-cards-grid"></div>
+              </div>
+            </div>
+            <div class="result-closing-area" id="result-actions">
+              <div class="result-actions-bar">
+                <button id="btn-open-lab" class="btn btn-secondary push-active"><svg class="svg-icon-small"><use href="#icon-tech"></use></svg> EXPOSE CONSTRAINTS</button>
+                <button id="btn-share-results" class="btn btn-secondary">SHARE DOSSIER</button>
+                <button id="btn-restart-simulation" class="btn btn-primary">SCAN ANOTHER</button>
+              </div>
+            </div>
+          </section>
+
+          <!-- 8. FEATURE 1-7: CONSTRAINT LAB SCREEN -->
+          <section id="constraint-lab-screen" class="app-screen" hidden>
+            <div class="section-card cardboard paper-tear-edge" style="background: #111; color: #0f0; border-color: #0f0;">
+              <div class="section-header">
+                <div class="stamp-retro angle-stamp" style="background:#0f0; color:#111;">ROOT ACCESS</div>
+                <h2 class="section-title" style="color:#0f0; text-shadow: 2px 2px 0 #005500;">CONSTRAINT<br>LAB_</h2>
+                <p class="section-sub" style="color:#0a0;">> Test rules, detect conflicts & control algorithm predictability.</p>
+              </div>
+
+              <!-- FEATURE 1 & 3: Rule Injector & Simulator -->
+              <div class="physical-inset" style="background: #002200; border: 2px solid #0f0; padding:1.2rem;">
+                <label style="display:block; font-family:var(--font-display); margin-bottom:0.5rem; color:#0f0;">INJECT CUSTOM RULE:</label>
+                <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                  <select id="rule-select" style="flex:1; min-width:200px; background:#111; color:#0f0; border:2px solid #0f0; padding:0.6rem; font-family:var(--font-system);">
+                    <option value="">-- Select Rule to Test --</option>
+                    <option value="sludge">No Sensory Sludge</option>
+                    <option value="echo">No Echo Chamber</option>
+                    <option value="hustle">No Hustle Delusion</option>
+                    <option value="outrage">No Outrage Loop</option>
+                    <option value="aesthetic">No Aesthetic Prison</option>
+                  </select>
+                  <button id="btn-add-rule" class="btn" style="background:#0f0; color:#111; border:2px solid #0f0;">TEST RULE</button>
+                </div>
+              </div>
+
+              <!-- FEATURE 2 & 3: Collision Engine & Pool Simulator Output -->
+              <div id="simulator-box" style="margin-top:1.5rem; border-left: 4px solid #0f0; padding-left: 1rem; background:rgba(0,255,0,0.05); padding:1rem;">
+                <div style="font-weight:bold; margin-bottom:0.5rem; color:#0f0;">[FEATURE 3] SIMULATED RECOMMENDATION POOL:</div>
+                <div style="font-size:2.2rem; font-family:var(--font-display); color:#0f0;" id="sim-pool">10,000 items</div>
+                <div style="color:#0a0; font-size:0.9rem; margin-top:0.3rem;" id="sim-collision">[FEATURE 2] COLLISION SEVERITY: LOW | DISCOVERY: 100% | PREDICTABILITY: 50%</div>
+              </div>
+
+              <!-- FEATURE 5 & 6: Knowledge Limit & Chaos Budget Sliders -->
+              <div class="physical-box" style="background:#111; border: 2px dashed #0f0; margin-top:1.5rem; padding:1.2rem;">
+                <label style="display:flex; justify-content:space-between; color:#0f0; font-family:var(--font-display); margin-bottom:0.5rem;">
+                  <span>[FEATURE 5] KNOWLEDGE LIMIT:</span> <span id="val-knowledge">100%</span>
+                </label>
+                <input type="range" id="slider-knowledge" min="50" max="100" value="100" class="modern-slider" style="background:#003300; margin-bottom:1.5rem; width:100%;">
+
+                <label style="display:flex; justify-content:space-between; color:#0f0; font-family:var(--font-display); margin-bottom:0.5rem;">
+                  <span>[FEATURE 6] DISCOVERY / CHAOS BUDGET:</span> <span id="val-chaos">0%</span>
+                </label>
+                <input type="range" id="slider-chaos" min="0" max="30" value="0" class="modern-slider" style="background:#003300; width:100%;">
+              </div>
+
+              <!-- FEATURE 7 & ACTIONS: Stress Test & Reboot -->
+              <div class="section-actions" style="border-top-color:#0f0; margin-top:2rem;">
+                <button id="btn-stress-test" class="btn" style="background:transparent; color:#0f0; border-color:#0f0;">[ FEATURE 7: STRESS TEST ]</button>
+                <button id="btn-reboot-algo" class="btn" style="background:#0f0; color:#111; border-color:#0f0;">REBOOT ALGORITHM &rarr;</button>
+              </div>
+            </div>
+          </section>
+
+        </main>
+      </div>
+
+      <!-- RIGHT PHONE -->
+      <div class="right-device-area">
+        <div class="retro-phone surprise-me" id="device-frame" data-slang="ALGO IS WATCHING">
+          <div class="phone-antenna"></div>
+          <div class="phone-top-bar">
+            <span class="cam-lens"></span>
+            <span class="speaker-grill">|||||</span>
+          </div>
+          <div class="phone-screen-border">
+            <div class="cabinet-screen">
+              <div class="crt-content" id="phone-display">
+                <div class="crt-line text-mustard">>>> SYS.CONSTRAINT_MONITOR</div>
+                <div class="crt-line">>>> AWAITING INPUT...</div>
+                <div class="crt-line blink">_</div>
+              </div>
+            </div>
+          </div>
+          <div class="phone-keypad" id="phone-keypad-area">
+            <button id="btn-start-simulation" class="btn btn-hero phone-btn pulse-shadow">
+              <svg class="btn-coin-icon"><use href="#icon-zap"></use></svg>
+              <span>INITIALIZE</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FEATURE 1: CONTRADICTION ENGINE MODAL -->
+    <div id="modal-contradiction" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.9); z-index:9999999; justify-content:center; align-items:center; padding:1rem;">
+      <div class="brutal-card cardboard hover-shake" style="background:var(--arcade-red); color:#fff; border-color:#111; max-width:480px; transform:rotate(-1deg); padding:2rem;">
+        <h2 style="font-family:var(--font-display); border-bottom:3px solid #fff; padding-bottom:0.5rem; margin-bottom:1rem; font-size:1.5rem;">⚠️ CONSTRAINT CONFLICT</h2>
+        <div style="font-weight:bold; margin-bottom:0.5rem; font-size:0.95rem;">YOUR RULE: <span id="modal-rule" style="color:var(--mustard);"></span></div>
+        <div style="font-weight:bold; margin-bottom:0.5rem; font-size:0.95rem;">OBSERVED BEHAVIOUR: <span id="modal-behav" style="color:var(--mustard);"></span></div>
+        <div style="font-weight:bold; margin-bottom:1rem; font-size:0.95rem;">ALGORITHM CONFIDENCE: <span id="modal-conf" style="color:#fff;">88%</span></div>
+        <p style="font-size:0.85rem; margin-bottom:1.5rem; line-height:1.4;">The system detected a contradiction between what you say you want and your actual behavioral data. Choose how the feed should resolve this conflict:</p>
+        <div style="display:flex; flex-direction:column; gap:0.6rem;">
+          <button class="btn btn-secondary modal-resolve" data-action="rule" style="color:#111; font-size:0.9rem;">TRUST MY CONSTRAINT (STRICT BLOCK)</button>
+          <button class="btn btn-secondary modal-resolve" data-action="behav" style="color:#111; font-size:0.9rem;">TRUST MY BEHAVIOUR (KEEP EXPOSURE)</button>
+          <button class="btn btn-primary modal-resolve" data-action="comp" style="background:var(--ink-black); color:#fff; font-size:0.9rem;">FIND A MIDDLE GROUND (50/50 COMPROMISE)</button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="app-footer" id="app-footer">
+      <div class="nexasoul-brand-box">
+        <h2 class="footer-logo">NEXASOUL<span class="text-red">.</span></h2>
+        <p class="nexasoul-motto">CODE // CONNECT // CONQUER</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/algorithm.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
